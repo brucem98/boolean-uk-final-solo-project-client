@@ -1,0 +1,9 @@
+.recipe_img {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+}
+
+.icon {
+  width: 18px;
+}

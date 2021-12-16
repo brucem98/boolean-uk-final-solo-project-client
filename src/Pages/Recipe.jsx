@@ -13,13 +13,13 @@ const [ingredientPrices, setIngredientPrices] = useState([]);
 console.log("recipe state object: ", recipe);
 console.log("prices state object: ", ingredientPrices)
 
-const newText = text.split(/[0-9]+\) /).filter((i) => i);
+// const newText = text.split(/[0-9]+\) /).filter((i) => i);
 
-const myList = newText
-    .map((text) => {
-        return `<li>${text}</li>`
-    })
-    .join("<br/>")
+// const myList = newText
+//     .map((text) => {
+//         return `<li>${text}</li>`
+//     })
+//     .join("<br/>")
 
 const location = useLocation()
 

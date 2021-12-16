@@ -9,25 +9,52 @@ console.log("Inside Recipe: ", recipes)
 const { id } = useParams();
 console.log(id)
 const [recipe, setRecipe] = useState(null);
+const [ingredientPrices, setIngredientPrices] = useState([]);
 console.log("recipe state object: ", recipe);
+console.log("prices state object: ", ingredientPrices)
+
+const newText = text.split(/[0-9]+\) /).filter((i) => i);
+
+const myList = newText
+    .map((text) => {
+        return `<li>${text}</li>`
+    })
+    .join("<br/>")
 
 const location = useLocation()
+
+
 
 useEffect(() => {
     if(location.state){
         console.log({location})
         setRecipe(location.state.recipe)
     }
-    // const url = `${process.env.REACT_APP_FETCH_URL}/recipes/${id}`;
-    // console.log("url: ", url)
-    // fetch(url)
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //         console.log("data: ", data);
-    //         setRecipe(data)
-    //     })
 }, [id])
 if(!recipe)return<div>loading...</div>
+
+function handleGetPrice(targetIngredient) {
+    fetch(`${process.env.REACT_APP_FETCH_URL}/prices?ingredient=${targetIngredient.name}`)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log("prices data: ", data)
+            const updatedIngredients = recipe.ingredients.map((ingredient) => {
+                if(ingredient.id === targetIngredient.id){
+                    return {
+                        ...ingredient,
+                        prices: data
+                    }
+                }
+                return ingredient
+            }) 
+            setRecipe({
+                ...recipe,
+                ingredients: updatedIngredients
+            })
+        })  
+        console.log("button clicked")
+}
+
 
 
 return (
@@ -50,15 +77,16 @@ return (
                 <li key={index}>
                     <h3>{ingredient.name}</h3>
                     <img src = {ingredient.img} alt = "ingredient" />
-
+                    <button onClick={() => handleGetPrice(ingredient)}>Check Price</button>
+                    {ingredient.prices && <h4>Price: £{ingredient.prices[0].price}</h4>}
                 </li>
             )
         })}
+      
     </ul>
     </section>
     <section>
     <h2>Method</h2>
-    
 
     </section>
     </main>

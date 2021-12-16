@@ -1,3 +1,7 @@
 .ingredients img {
   width: 180px;
 }
+
+.ingredients button {
+  width: 100px;
+}

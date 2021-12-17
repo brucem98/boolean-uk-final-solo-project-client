@@ -8,7 +8,7 @@ console.log("Inside Home: ", props)
 
 return(
     <>
-        <header>
+        <header className="main-page-header">
             <h1>Main Page</h1>
         </header>
         <main className="three-column-grid">

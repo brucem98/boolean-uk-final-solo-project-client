@@ -17,7 +17,7 @@
   width: 18px;
 }
 
-header {
+.main-page-header {
   background-color: #f4a460;
   height: 140px;
   text-align: center;
@@ -47,6 +47,7 @@ h3 {
 .recipes-list p {
   margin-bottom: 10px;
 }
+
 /* Grids */
 
 .three-column-grid {

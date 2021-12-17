@@ -49,41 +49,65 @@ function handleGetPrice(targetIngredient) {
 
 return (
  <>
-    <header>
-        <img src={recipe.img} alt="recipe"/>
-        <h1>{recipe.name}</h1>
-        <ul>
+  <div className="four-column-grid"> 
+    <div></div>
+    <section>
+        <img src={recipe.img} alt="recipe" className="specific-recipe-img"/>
+    </section>
+    <section>
+        <h1 className="specific-recipe-title">{recipe.name}</h1>
+        <hr />
+        <ul className="list-inline">
             <li>Total Time: {recipe.totalTime} min</li>
             <li>Serves: {recipe.serving}</li>
             <li>{recipe.dishType}</li>
         </ul>
-    </header>
+        <hr />
+        <h4 className="nutrition-info-title">NUTRITION PER SERVING</h4>
+        <ul className="list-inline">
+            <li>Calories | {recipe.calories}</li>
+            <li>Fat | {recipe.fat}</li>
+            <li>Protein | {recipe.protein}</li>
+            <li>Carbs | {recipe.carbs}</li>
+        </ul>
+        <hr className="hr-fix" />
+    </section>
+    <div></div>
+ </div> 
     <main>
-    <section className="ingredients">
+    <section className="ingredients three-column-grid-ingredients">
+    <div></div>
+    <section>
     <h2>Ingredients</h2>
-    <ul>
+    <hr/>
+    <ul className="four-column-grid-ingredient-list">
         {recipe.ingredients.map((ingredient, index) => {
             return(
                 <li key={index}>
                     <h3>{ingredient.name}</h3>
                     <img src = {ingredient.img} alt = "ingredient" />
+                    <br/>
                     <button onClick={() => handleGetPrice(ingredient)}>Check Price</button>
-                    {ingredient.prices && <h4>Price: £{ingredient.prices[0].price}</h4>}
+                    {ingredient.prices && <a href={ingredient.prices[0].link}><h4>Price: £{ingredient.prices[0].price}</h4></a>}
                 </li>
             )
         })}
-      
     </ul>
+    <hr />
     </section>
-    <section>
-
+    <div></div>
     </section>
-    <section>
-    <h2>Method</h2>
-
+   
+    <section className="three-column-grid-ingredients">
+    <div></div>
+        <section>
+        <h2 className="method-title">Method</h2>
+        <p>{recipe.instruction}</p>
+        </section>
+    <div></div>
     </section>
     </main>
-
+    <footer></footer>
  </>    
 
 )   

@@ -9,9 +9,9 @@ console.log("Inside Home: ", props)
 return(
     <>
         <header className="main-page-header">
-            <h1>Main Page</h1>
+            <h1>Quick & Easy Food Scraping</h1>
         </header>
-        <main className="three-column-grid">
+        <main className="three-column-grid-home">
             <div></div>
             <div>
             <h2>Recipes</h2>
@@ -24,8 +24,9 @@ return(
                           <p>{recipe.dishType}</p>
                           <p> <img src={timer} alt="timer" className="icon"/> {recipe.totalTime} MINUTES </p>  
                         <Link to={`/recipes/${recipe.id}`} state={{recipe}}>
-                      <img 
-                          src={recipe.img} alt="Recipe" className="recipe-img" />
+                      <div className="hover-box">
+                      <img src={recipe.img} alt="Recipe" className="recipe-img" />
+                      </div>
                       </Link>  
                       </li>
                     )
@@ -35,7 +36,7 @@ return(
             </div>
             <div></div>
         </main>
-
+        <footer></footer>
     </>
 )
 }

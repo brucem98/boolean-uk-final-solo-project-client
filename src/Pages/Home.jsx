@@ -11,31 +11,31 @@ return(
         <header>
             <h1>Main Page</h1>
         </header>
-        <main>
+        <main className="three-column-grid">
+            <div></div>
             <div>
-                <section>
-                <h2>Recipes</h2>
-                </section>
-            </div>
-            <section className="recipes_list">
-            <ul>
+            <h2>Recipes</h2>
+            <section className="recipes-list">
+            <ul className="three-column-grid-recipes">
                 {props.recipes.map((recipe, index) => {
                     return(
                       <li key={index} >
                           <h3>{recipe.name}</h3>
+                          <p>{recipe.dishType}</p>
                           <p> <img src={timer} alt="timer" className="icon"/> {recipe.totalTime} MINUTES </p>  
                         <Link to={`/recipes/${recipe.id}`} state={{recipe}}>
                       <img 
-                          
-                          src={recipe.img} alt="Recipe" className="recipe_img" />
+                          src={recipe.img} alt="Recipe" className="recipe-img" />
                       </Link>  
                       </li>
                     )
                 })}
             </ul>
             </section>
+            </div>
+            <div></div>
         </main>
-    
+
     </>
 )
 }

@@ -93,7 +93,7 @@ return (
             )
         })}
     </ul>
-    <hr />
+    <hr />  
     </section>
     <div></div>
     </section>
@@ -114,3 +114,4 @@ return (
 }
 
 export default  Recipe;
+

@@ -79,6 +79,11 @@ a:hover {
   text-decoration: underline;
 }
 
+.price-link {
+  margin-top: 20px;
+  font-size: 1.25rem;
+}
+
 /* Grids */
 
 .four-column-grid {

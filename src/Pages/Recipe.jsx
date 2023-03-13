@@ -88,7 +88,7 @@ return (
                     <img src = {ingredient.img} alt = "ingredient" />
                     <br/>
                     <button onClick={() => handleGetPrice(ingredient)}>Check Price</button>
-                    {ingredient.prices && <a href={ingredient.prices[0].link}><h4>Price: £{ingredient.prices[0].price}</h4></a>}
+                    {ingredient.prices && <a href={ingredient.prices[0].link}><h4 class="price-link">Price: £{ingredient.prices[0].price}</h4></a>}
                 </li>
             )
         })}

@@ -14,7 +14,7 @@ return(
         <main className="three-column-grid-home">
             <div></div>
             <div>
-            <h2>Recipes</h2>
+            <h2 className="home-page-h2">Recipes</h2>
             <section className="recipes-list">
             <ul className="three-column-grid-recipes">
                 {props.recipes.map((recipe, index) => {

@@ -84,6 +84,21 @@ a:hover {
   font-size: 1.25rem;
 }
 
+.tesco-button {
+  cursor:pointer;
+  background-color: #00539F;
+  color: whitesmoke;
+  padding: 0.2rem;
+}
+
+.tesco-button:hover {
+  background-color: #00ABF0;
+}
+
+.tesco-button:active {
+  font-weight: bold;
+}
+
 /* Grids */
 
 .four-column-grid {

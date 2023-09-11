@@ -9,7 +9,7 @@ console.log("Inside Home: ", props)
 return(
     <>
         <header className="main-page-header">
-            <h1>Quick & Easy Food Scraping</h1>
+            <h1>Simple Dishes</h1>
         </header>
         <main className="three-column-grid-home">
             <div></div>

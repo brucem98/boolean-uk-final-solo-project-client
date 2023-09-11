@@ -87,7 +87,12 @@ return (
                     <h3>{ingredient.name}</h3>
                     <img src = {ingredient.img} alt = "ingredient" />
                     <br/>
-                    <button onClick={() => handleGetPrice(ingredient)}>Check Price</button>
+                    {/* <button onClick={() => handleGetPrice(ingredient)}>Check Price</button> */}
+                    <a href={`https://www.tesco.com/groceries/en-GB/search?query=${ingredient.name}`} target="_blank" rel="noopener noreferrer">
+                        <button className="tesco-button">
+                            Tesco Info 
+                        </button>
+                    </a>
                     {ingredient.prices && <a href={ingredient.prices[0].link}><h4 class="price-link">Price: £{ingredient.prices[0].price}</h4></a>}
                 </li>
             )

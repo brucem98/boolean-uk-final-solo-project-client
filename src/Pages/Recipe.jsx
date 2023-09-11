@@ -7,11 +7,11 @@ function Recipe ({ recipes }) {
 console.log("Inside Recipe: ", recipes)
 
 const { id } = useParams();
-console.log(id)
+// console.log(id)
 const [recipe, setRecipe] = useState(null);
 const [ingredientPrices, setIngredientPrices] = useState([]);
-console.log("recipe state object: ", recipe);
-console.log("prices state object: ", ingredientPrices)
+// console.log("recipe state object: ", recipe);
+// console.log("prices state object: ", ingredientPrices)
 
 
 const location = useLocation()
@@ -46,6 +46,20 @@ function handleGetPrice(targetIngredient) {
         console.log("button clicked")
 }
 
+
+
+
+const stepsWithSpaces = recipe.instruction.split(/(?=\d\))/).map((step, index) => {
+    return (
+    <div key={index}> 
+        {step.trim()}
+        <br />
+        <br />
+    </div>
+    )
+});
+
+console.log('check check', recipe.instruction)
 
 return (
  <>
@@ -107,7 +121,7 @@ return (
     <div></div>
         <section>
         <h2 className="method-title">Method</h2>
-        <p>{recipe.instruction}</p>
+        {stepsWithSpaces}
         </section>
     <div></div>
     </section>

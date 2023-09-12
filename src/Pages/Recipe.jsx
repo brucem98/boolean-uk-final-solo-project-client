@@ -85,7 +85,7 @@ return (
             <li>Protein | {recipe.protein}</li>
             <li>Carbs | {recipe.carbs}</li>
         </ul>
-        <hr className="hr-fix" />
+        <hr  />
     </section>
     <div></div>
  </div> 

@@ -109,6 +109,12 @@ a:hover {
   font-weight: bold;
 }
 
+.four-column-grid-ingredient-list li {
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* Grids */
 
 .four-column-grid {
@@ -132,7 +138,9 @@ a:hover {
 @media only screen and (max-width: 900px){
   .list-inline {
    justify-content: center;
+   vertical-align: top;
   }
+
 
   .four-column-grid {
     display: flex;
@@ -143,10 +151,10 @@ a:hover {
   .four-column-grid-ingredient-list {
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1rem;
+    vertical-align: middle;
   }
-  
 
-  h3 {
-    font-size: 1em;
-  }
+    h3 {
+      font-size: 1rem;
+    }
 }
